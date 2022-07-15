@@ -11,6 +11,8 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 	
+	
+	<!-- This is updated to create the jar file using Maven Deployment Comments --->
 	<!-- https://rodolfombc.medium.com/deploying-java-artifacts-on-a-nexus-repository-with-maven-939a80406acf --->
 	
 	<!--- With “settings.xml” configured and placed correctly, before running the command, we need to pay attention to the name of the file we want to deploy as it must match the “-Dfile” argument value we will input. Then, we can run it from a Linux terminal: -->
