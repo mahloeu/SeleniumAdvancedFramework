@@ -1,0 +1,123 @@
+/*
+<dependencies>
+
+<dependency>
+
+<groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId>
+
+<version>8.0.28</version>
+
+</dependency> <dependency>
+
+<groupId>com.microsoft.sqlserver</groupId> <artifactId>mssql-jdbc</artifactId> <version>10.2.1.jre8</version>
+
+</dependency> <dependency>
+
+<groupId>com.oracle.database.jdbc</groupId>
+
+<artifactId>ojdbc8</artifactId>
+
+<version>21.5.0.0</version>
+
+</dependency>
+
+</dependencies>
+*/
+
+import java.sql.Connection;
+
+import java.sql.Statement;
+
+import java.sql.Resultset;
+
+import java.sql.DriverManager; import java.sql.SQLException;
+
+public class SQLConnector {
+
+public static void main(String[] args) throws ClassNotFoundException, SQLException {
+
+//Connection URL Syntax: "jdbc: oracle: thin: @HostName:Port:SID"
+
+string dburl = "jdbc: oracle: thin:@ma-wildqs01.websterbank.com: 52731:wiloq11";
+
+//Database Username
+
+String username = "aantony";
+
+//Database Password String password = "webster@2411";
+
+//Load Oracle jdbc driver
+
+class.forName("oracle.jdbc.OracleDriver");
+
+//Create Connection to DB
+
+Connection con= DriverManager.getConnection (dburl, username, password);
+
+if (con!=null) {
+
+System.out.println("DB connection is successful");
+
+}
+
+//Create Statement object Statement stmt = con.createStatement();
+
+Statement stmt = con.createStatement();
+
+//Execute the SQL Query and check how many rows are present in the DB
+
+//Query to Execute
+
+String query = "SELECT COUNT(*) FROM EIS.transaction_event where transaction_id= 70131a68-30b1-4128-8abd-a12b3546f676'
+
+ORDER BY EVENT_TIMESTAMP ASC";
+
+ResultSet rs;
+
+rs= stmt.executeQuery(query);
+
+rs.next():
+
+System.out.println("Number of Rows retrieved is : + rs.getString(1));
+
+// Execute the SQL Query. Store results in Resultset for all column //Query to Execute
+
+rs stat.executeQuery (query);
+
+query= "SELECT FROM EIS. transaction_event where transaction_id= 70131a68-30b1-4128-8abd-a12b3546f676' ORDER BY EVENT_TIMESTAMP ASC":
+
+//get Column Count using MetaData()
+
+I
+
+java.sql.ResultSetMetaData resultmData = rs.getMetaDataQ; System.out.println("Number of columns Present: "+resultmData.getColumnCount());
+
+int columnCount = resultmData.getColumnCount():
+
+// while Loop to iterate through all data and print results for all rows and columns
+
+System.out.println("");
+
+System.out.println("*******
+
+************** ");
+
+while (rs.next()) {
+
+for (int i = 1; i <= columnCount; i++) { String Columnvalue = rs.getString(1);
+
+System.out.print (Columnvalue+" ");
+
+System.out.println("");
+
+System.out.println("******** ***** ");
+
+}
+
+System.out.println("");
+
+// closing DB Connection con.close();
+
+I
+
+}
