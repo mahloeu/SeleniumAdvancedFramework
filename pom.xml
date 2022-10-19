@@ -19,6 +19,8 @@
 	
 	<!----  mvn deploy:deploy-file -Durl=https://my-nexus-repo-address.com -Dfile=my-java-artifact.jar -DgroupId=com.example -DartifactId=my-java-artifact -Dpackaging=jar -Dversion=1.0.0 -DrepositoryId=my-repo-id --->
 	
+	<!---The below URL can be used to integrate the JIRA with Selenium Framework  --->
+	<!--- https://github.com/rcarz/jira-client/blob/master/README.md---->
 	
 	 <distributionManagement>
   <repository>
